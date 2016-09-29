@@ -32,8 +32,8 @@ namespace ChargeBox
                 UniversalAccessFromFileUrls = CefState.Enabled
             };
 
-            //this.Browser.RegisterJsObject("windowsApp", new JavascriptInteractionController());  // wdy this doesnt work?
-            this.Browser.RegisterAsyncJsObject("windowsApp", new JavascriptInteractionController());
+            this.Browser.RegisterJsObject("windowsApp", new JavascriptInteractionController(), true);  // wdy this doesnt work?
+            //this.Browser.RegisterAsyncJsObject("windowsApp", new JavascriptInteractionController());
 
             World.Initialize();
         }
