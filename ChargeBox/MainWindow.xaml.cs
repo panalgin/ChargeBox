@@ -32,11 +32,10 @@ namespace ChargeBox
                 UniversalAccessFromFileUrls = CefState.Enabled
             };
 
+            //this.Browser.RegisterJsObject("windowsApp", new JavascriptInteractionController());  // wdy this doesnt work?
+            this.Browser.RegisterAsyncJsObject("windowsApp", new JavascriptInteractionController());
 
-
-            //this.Browser.RegisterJsObject("windowsApp", new JavascriptInteractionController(), true);
-
-            //World.Initialize();
+            World.Initialize();
         }
 
         private void MainWindow_SourceInitialized(object sender, EventArgs e)
@@ -48,13 +47,7 @@ namespace ChargeBox
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             string page = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "View\\index.html");
-
             this.Browser.Load(page);
-
-            //this.Browser.BrowserSettings.FileAccessFromFileUrls = CefSharp.CefState.Enabled;
-
-            //this.Browser.Load("http://www.vsynctester.com/");
-
         }
 
         private void Browser_MouseDown(object sender, MouseButtonEventArgs e)
