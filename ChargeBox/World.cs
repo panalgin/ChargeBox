@@ -11,7 +11,6 @@ namespace ChargeBox
         public static ControlBoard ControlBoard { get; set; }
         public static void Initialize()
         {
-
         }
     }
 }
