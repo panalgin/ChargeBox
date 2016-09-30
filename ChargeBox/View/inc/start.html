@@ -1,11 +1,26 @@
 ﻿<div id="start-content" class="tab-content" tabindex="-1">
     <div class="layer">
+        <span class="header">Cabinet Layer: 1</span>
+        <div class="charge-layer">
+            <div class="charge-object">
+                <span class="header">Cabinet: 1</span>
+                <img src="img/cabin-closed.png" />
+                <span class="state">Durum: ?</span>
+            </div>
+            <div class="charge-object">
+                <span class="header">Cabinet: 2</span>
+                <img src="img/cabin-open.png" />
+                <span class="state">Durum: ?</span>
+            </div>
+        </div>
+    </div>
+    <div class="layer">
         <span class="header">USB Layer: 2</span>
         <div class="charge-layer">
             <div class="charge-object">
                 <span class="header">USB: 9</span>
+                <div class="charge-backlay"></div>
                 <img src="img/battery-template.png" />
-
                 <span class="state">Durum: Aktif</span>
                 <span class="connection">Bağlantı: Var</span>
                 <span class="period">Kalan: 10dk</span>
@@ -69,7 +84,7 @@
         </div>
     </div>
     <div class="layer">
-        <span class="header">USB Layer: 2</span>
+        <span class="header">USB Layer: 1</span>
         <div class="charge-layer">
             <div class="charge-object">
                 <span class="header">USB: 1</span>
@@ -138,3 +153,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('.switch').click(function () {
+            $(this).toggleClass("switchOn");
+        });
+    });
+</script>
