@@ -470,7 +470,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     position: absolute; top: 17px; right: 0px; left: 0px; bottom: 0px; 
     background-color: #1e1e1e; 
 }
-.main-bar .content .tab-content { outline: 0px; width: 100%; height: 100%; position: relative; }
+.main-bar .content .tab-content { outline: 0px; width: 100%; height: 100%; position: relative; overflow: auto; }
 .main-bar .active { border-top-color: #3f3f46; }
 .main-bar .active img { display: block; }
 .main-bar .active-focused { border-top-color: #007acc !important; }
@@ -570,4 +570,30 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     font-size: 11px;
     padding: 3px;
 }
+
+.layer { float: left; overflow: hidden; display: block; margin: 5px; position: relative; }
+.layer .header { width: 100px; height: 20px; line-height: 20px; background-color: #2d2d30; z-index: 1; margin-left: 10px; text-align: center; position: absolute; }
+.charge-layer { background-color: #2d2d30; display: block; overflow: hidden; float: left; margin-top: 20px; }
+.charge-object {
+    width: 140px;
+    height: 110px;
+    display: block;
+    float: left; 
+    background-color: #39393d;
+    margin: 5px;
+    margin-right: 0px;
+
+    position: relative;
+}
+
+.charge-object img { width: 42px; height: 80px; margin: 0px; padding: 0px; vertical-align: top;
+    position: absolute;
+    left: 5px;
+    top: 25px;
+}
+.charge-object:last-of-type { margin-right: 5px; }
+.charge-object .header { position: absolute; top: 0px; width: 100%; height: 20px; padding: 0px; margin: 0px; text-align: center; line-height: 20px; left: 0px; background-color: #434348; z-index: 0; }
+.charge-object .state, .charge-object .connection, .charge-object .period { position: absolute; top: 60px; left: 57px; line-height: 15px; height: 15px; display: block; }
+.charge-object .connection { top: 75px; }
+.charge-object .period { top: 90px; }
 

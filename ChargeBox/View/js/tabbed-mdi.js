@@ -36,7 +36,7 @@ function getPage(name) {
     else {
         switch (name) {
             case "connections": $("div.tabs").append("<div class=\"tab\" id=\"" + name + "-tab\">Bağlantı <img src=\"img/close.png\" /></div>"); break;
-            case "start": $("div.tabs").append("<div class=\"tab\" id=\"" + name + "-tab\">Başlangıç <img src=\"img/close.png\" /></div>"); break;
+            case "start": $("div.tabs").append("<div class=\"tab\" id=\"" + name + "-tab\">Anasayfa <img src=\"img/close.png\" /></div>"); break;
         }
 
         $.get("inc/" + name + ".html", function (data) {

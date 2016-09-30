@@ -149,6 +149,9 @@
     <Content Include="View\img\bar-tile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\img\battery-template.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="View\img\chargebox-logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
