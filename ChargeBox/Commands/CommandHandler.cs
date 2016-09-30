@@ -44,25 +44,30 @@ namespace ChargeBox.Commands
             }
         }
 
+
+        private static string incomingData = "";
+
         public void Parse(string data)
         {
-            if (data.EndsWith(Environment.NewLine) || data.EndsWith("\0"))
+            incomingData += data;
+
+            if (incomingData.EndsWith(Environment.NewLine) || incomingData.EndsWith("\0"))
             {
-                data = data.Replace("\r\n", "").Replace("\n", "").Replace("\0", "");
+                incomingData = incomingData.Replace("\r\n", "").Replace("\n", "").Replace("\0", "");
 
-                EventSink.InvokeCommandReceived(new CommandEventArgs(this.Board, data));
+                EventSink.InvokeCommandReceived(new CommandEventArgs(this.Board, incomingData));
 
-                if (data.Contains(string.Format("Hello: {0}", this.Board.Name)))
+                if (incomingData.Contains(string.Format("Hello: {0}", this.Board.Name)))
                 {
                     this.Board.IsConnected = true;
                     EventSink.InvokeConnected(this.Board);
                 }
 
-                else if (data.StartsWith("Pos: ")) // Format: Pos: A:5000,B:-500,C:123
+                else if (incomingData.StartsWith("Pos: ")) // Format: Pos: A:5000,B:-500,C:123
                 {
-                    data = data.Replace("Pos: ", "");
+                    incomingData = incomingData.Replace("Pos: ", "");
 
-                    string[] parsed = data.Split(',');
+                    string[] parsed = incomingData.Split(',');
 
                     foreach (string i in parsed)
                     {
@@ -78,6 +83,8 @@ namespace ChargeBox.Commands
 
                     }
                 }
+
+                incomingData = "";
             }
         }
 
