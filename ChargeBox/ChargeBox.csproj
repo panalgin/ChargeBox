@@ -173,6 +173,9 @@
     <Content Include="View\img\connected.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\img\control-board.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="View\img\left-ear-range.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
