@@ -51,36 +51,49 @@ namespace ChargeBox.Commands
         {
             incomingData += data;
 
-            if (incomingData.EndsWith(Environment.NewLine) || incomingData.EndsWith("\0"))
+            if (incomingData.EndsWith(Environment.NewLine))
             {
-                incomingData = incomingData.Replace("\r\n", "").Replace("\n", "").Replace("\0", "");
+                incomingData = incomingData.Replace("\r\n", "|");
 
-                EventSink.InvokeCommandReceived(new CommandEventArgs(this.Board, incomingData));
+                string[] m_Commands = incomingData.Split('|');
 
-                if (incomingData.Contains(string.Format("Hello: {0}", this.Board.Name)))
+                if (m_Commands.Length > 0)
                 {
-                    this.Board.IsConnected = true;
-                    EventSink.InvokeConnected(this.Board);
-                }
-
-                else if (incomingData.StartsWith("Pos: ")) // Format: Pos: A:5000,B:-500,C:123
-                {
-                    incomingData = incomingData.Replace("Pos: ", "");
-
-                    string[] parsed = incomingData.Split(',');
-
-                    foreach (string i in parsed)
+                    for(int i = 0; i < m_Commands.Length; i++)
                     {
-                        string[] item = i.Split(':');
-                        string axis = item[0];
-                        string value = item[1];
+                        if (m_Commands[i].Length > 0)
+                        {
+                            string m_Command = m_Commands[i];
 
-                        ulong pos = 0;
-                        bool isNumber = ulong.TryParse(value, out pos);
+                            EventSink.InvokeCommandReceived(new CommandEventArgs(this.Board, m_Command));
 
-                        if (isNumber)
-                            EventSink.InvokePositionChanged(axis, pos);
+                            if (m_Command.Contains(string.Format("Hello: {0}", this.Board.Name)))
+                            {
+                                this.Board.IsConnected = true;
+                                EventSink.InvokeConnected(this.Board);
+                            }
 
+                            else if (m_Command.StartsWith("Pos: ")) // Format: Pos: A:5000,B:-500,C:123
+                            {
+                                m_Command = m_Command.Replace("Pos: ", "");
+
+                                string[] parsed = m_Command.Split(',');
+
+                                foreach (string j in parsed)
+                                {
+                                    string[] item = j.Split(':');
+                                    string axis = item[0];
+                                    string value = item[1];
+
+                                    ulong pos = 0;
+                                    bool isNumber = ulong.TryParse(value, out pos);
+
+                                    if (isNumber)
+                                        EventSink.InvokePositionChanged(axis, pos);
+
+                                }
+                            }
+                        }
                     }
                 }
 

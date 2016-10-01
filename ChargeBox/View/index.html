@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="top">
-        <div class="title"><img src="img/chargebox-logo.png" title="Anasayfa" />ChargeBox - Version 0.0.2</div>
+        <div class="title"><img src="img/chargebox-logo.png" title="Anasayfa" />ChargeBox - Version 0.0.3</div>
         <ul class="menu">
             <li id="file-member" class="sys-menu-member">DOSYA</li>
             <li id="edit-member" class="sys-menu-member">DÜZENLE</li>
@@ -38,7 +38,7 @@
 
             $("div.menu-btn").on("click", function (e) {
                 var bID = $(this).attr('id').replace('menu-', "");
-                $("div#pop-" + bID).slideToggle();
+                $("div#pop-" + bID).slideToggle("fast");
             });
 
             getPage("start");

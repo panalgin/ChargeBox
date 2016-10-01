@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Web;
 using System.Windows;
 
 namespace ChargeBox
@@ -49,7 +51,16 @@ namespace ChargeBox
                     else
                         m_Script = entity.CachedData;
 
-                    m_Window.Browser.ExecuteScriptAsync(string.Format(m_Script, parameters));
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        if (parameters[i] is string)
+                        {
+                            parameters[i] = HttpUtility.JavaScriptStringEncode(parameters[i].ToString()); // we should stringify for javascript
+                        }
+                    }
+
+                    string m_Formatted = string.Format(m_Script, parameters);
+                    m_Window.Browser.ExecuteScriptAsync(m_Formatted);
                 }
                 else
                 {
