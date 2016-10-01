@@ -25,13 +25,22 @@ namespace ChargeBox
     {
         public MainWindow()
         {
-            InitializeComponent(); this.Browser.BrowserSettings = new CefSharp.BrowserSettings
+            InitializeComponent();
+
+            
+                
+            BrowserSettings m_Settings =  new CefSharp.BrowserSettings
             {
                 OffScreenTransparentBackground = false,
                 FileAccessFromFileUrls = CefState.Enabled,
                 UniversalAccessFromFileUrls = CefState.Enabled
             };
 
+            this.Browser.BrowserSettings = m_Settings;
+
+            
+
+            
             this.Browser.RegisterJsObject("windowsApp", new JavascriptInteractionController(), true);  // wdy this doesnt work?
             //this.Browser.RegisterAsyncJsObject("windowsApp", new JavascriptInteractionController());
 
