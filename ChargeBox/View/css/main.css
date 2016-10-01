@@ -985,6 +985,8 @@ input[type=range] {
     overflow: hidden;
     float: left;
     margin-top: 20px;
+
+    padding-bottom: 5px;
 }
 
 .charge-object {
@@ -995,6 +997,7 @@ input[type=range] {
     background-color: #39393d;
     margin: 5px;
     margin-right: 0px;
+    margin-bottom: 0px;
     position: relative;
 }
 

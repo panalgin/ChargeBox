@@ -73,25 +73,12 @@ namespace ChargeBox.Commands
                                 EventSink.InvokeConnected(this.Board);
                             }
 
-                            else if (m_Command.StartsWith("Pos: ")) // Format: Pos: A:5000,B:-500,C:123
+                            else if (m_Command.StartsWith("BoardInfo: ")) // Format: Pos: A:5000,B:-500,C:123
                             {
-                                m_Command = m_Command.Replace("Pos: ", "");
+                                m_Command = m_Command.Replace("BoardInfo: ", "");
 
-                                string[] parsed = m_Command.Split(',');
-
-                                foreach (string j in parsed)
-                                {
-                                    string[] item = j.Split(':');
-                                    string axis = item[0];
-                                    string value = item[1];
-
-                                    ulong pos = 0;
-                                    bool isNumber = ulong.TryParse(value, out pos);
-
-                                    if (isNumber)
-                                        EventSink.InvokePositionChanged(axis, pos);
-
-                                }
+                                BoardInfoArgs args = new BoardInfoArgs(m_Command);
+                                EventSink.InvokeBoardInfoChanged(args);
                             }
                         }
                     }

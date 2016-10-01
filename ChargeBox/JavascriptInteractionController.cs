@@ -21,12 +21,12 @@ namespace ChargeBox
             EventSink.CommandReceived += EventSink_CommandReceived;
             EventSink.Connected += EventSink_Connected;
             EventSink.Disconnected += EventSink_Disconnected;
-            EventSink.PositionChanged += EventSink_PositionChanged;
+            EventSink.BoardInfoChanged += EventSink_BoardInfoChanged;
         }
 
-        private void EventSink_PositionChanged(string axis, ulong position)
+        private void EventSink_BoardInfoChanged(BoardInfoArgs args)
         {
-            JavascriptInjector.Run(JavascriptInjector.ScriptAction.PositionChanged, axis, position.ToString());
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.BoardInfoChanged, args.Json);
         }
 
         public void Exit()
