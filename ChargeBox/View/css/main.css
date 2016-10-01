@@ -263,6 +263,7 @@ img {
     background-color: #39393d;
     padding: 4px;
     display: none;
+    position: relative;
 }
 
     .menu-pop .header {
@@ -1136,3 +1137,16 @@ input.toggle {
         left: 20px;
         /*box-shadow: inset 0 0 0 1px #007acc, 0 2px 4px rgba(0, 0, 0, 0.2);*/
     }
+
+.ajax {
+    width: 16px;
+    height: 11px;
+    background-image: url("../img/ajax-loader.gif");
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 999;
+
+    display: none;
+}
