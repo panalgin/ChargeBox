@@ -386,7 +386,7 @@ input[type=range] {
         color: #02c0ef;
         position: absolute;
         bottom: 7px;
-        left: 37px;
+        left: 5px;
         font-weight: bold;
     }
 
@@ -408,26 +408,26 @@ input[type=range] {
     }
 
     .menu-pop .row .ref-all-btn {
-        width: 90px;
-        height: 20px;
-        background-color: #02c0ef;
-        border: 1px solid #0088aa;
+        width: 97px;
+        height: 25px;
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #111;
         font-weight: bold;
-        text-shadow: -1px -1px 0 #0088aa, 1px -1px 0 #0088aa, -1px 1px 0 #0088aa, 1px 1px 0 #0088aa;
         text-align: center;
-        line-height: 20px;
+        line-height: 25px;
         right: 0px;
-        top: 4px;
+        top: 1px;
         position: absolute;
-        cursor: default;
+        cursor: pointer;
     }
 
         .menu-pop .row .ref-all-btn:hover {
-            background-color: #71e0fb;
+            background-color: #2a2a2a;
         }
 
         .menu-pop .row .ref-all-btn:active {
-            background-color: #0088aa;
+            background-color: #1A1A1A;
         }
 
 .joystick-h {
@@ -913,6 +913,7 @@ input[type=range] {
     background-color: #007acc;
     color: #fff;
     border: 1px solid #1597ef;
+    cursor: pointer;
 }
 
     .content .connect:hover {
@@ -927,6 +928,7 @@ input[type=range] {
     background-color: #ff2a00;
     color: #fff;
     border: 1px solid #ff611c;
+    cursor: pointer;
 }
 
     .content .disconnect:hover {
@@ -1078,6 +1080,13 @@ input[type=range] {
     position: absolute;
     left: 57px;
     top: 20px;
+}
+
+.row .check-btn {
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    margin-top: -14px;
 }
 input.toggle {
     max-height: 0;

@@ -1,0 +1,50 @@
+/*********** spinner start *************/
+
+.wan-spinner {
+    border: 1px solid #111;
+    display: block;
+    float: right;
+    margin: 1px 0px;
+}
+
+    .wan-spinner .minus,
+    .wan-spinner .plus,
+    .wan-spinner input {
+        height: 15px;
+        float: left;
+        line-height: 1em;
+        padding: 5px;
+        text-align: center;
+        outline: none;
+        font-family: Tahoma;
+        font-size: 11px;
+        
+    }
+
+    .wan-spinner input {
+        border: none;
+        border-left: 1px solid #111;
+        border-right: 1px solid #111;
+        margin: 0;
+        width: 40px;
+        background-color: #2e2e32;
+        color: #fff;
+    }
+
+    .wan-spinner .minus,
+    .wan-spinner .plus {
+        background-color: #222;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+        width: 15px;
+        cursor: pointer;
+    }
+
+    .wan-spinner .minus:hover, .wan-spinner .plus:hover { background-color: #2a2a2a; }
+    .wan-spinner .minus:active, .wan-spinner .plus:active { cursor: pointer; background-color: #1a1a1a; }
+
+    
+
+
+/*********** spinner end *************/

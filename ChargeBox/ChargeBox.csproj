@@ -144,6 +144,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="View\css\wan-spinner.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\js\wan-spinner.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="chargebox-logo.ico" />
     <Content Include="View\css\main.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

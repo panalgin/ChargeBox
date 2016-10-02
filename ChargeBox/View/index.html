@@ -5,10 +5,11 @@
     <meta charset="utf-8" />
     <title>Anasayfa</title>
     <link rel="stylesheet" href="css/main.css" media="all" type="text/css" />
+    <link rel="stylesheet" href="css/wan-spinner.css" media="all" type="text/css" />
     <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="js/sys-menu.js"></script>
     <script type="text/javascript" src="js/tabbed-mdi.js"></script>
-    <script type="text/javascript" src="js/joystick.js"></script>
+    <script type="text/javascript" src="js/wan-spinner.js"></script>
 </head>
 <body>
     <div class="top">
@@ -32,6 +33,17 @@
     <div class="spacer"></div>
     <script type="text/javascript">
         $(document).ready(function () {
+            var options = {
+                maxValue: 255,
+                minValue: 1,
+                inputWidth: 35,
+                start: 1,
+                valueChanged: function (val) {
+                    
+                }
+            }
+            $(".wan-spinner-1").WanSpinner(options);
+
             $("div.connection input[type='button']").on("click", function (e) {
                 windowsApp.disconnect();
             });
@@ -47,8 +59,6 @@
                 $("div.menu-btn").trigger("click");
                 $("div.tab-content").attr("tabindex", "-1").focus();
             }, 1000);
-
-
         });
 
     </script>
@@ -84,13 +94,48 @@
         </div>
         <div id="menu-2" class="menu-btn">SETTINGS <img src="img/settings-icon.png" /></div>
         <div id="pop-2" class="menu-pop">
-            <div class="header">MOTOR COORDINATES</div>
-            <div class="row"><img src="img/motor-small.png" /><span>X:</span><div id="x-position" class="coordinate">0.0000</div></div>
-            <div class="row"><img src="img/motor-small.png" /><span>Y:</span><div id="y-position" class="coordinate">0.0000</div></div>
-            <div class="row"><img src="img/motor-small.png" /><span>Z:</span><div id="z-position" class="coordinate">0.0000</div></div>
-            <div class="row"><img src="img/motor-small.png" /><span>A:</span><div id="a-position" class="coordinate">0.0000</div></div>
-            <div class="row"><img src="img/motor-small.png" /><span>B:</span><div id="b-position" class="coordinate">0.0000</div></div>
-            <div class="row"><div class="ref-all-btn">REF ALL HOME</div></div>
+            <div class="header">BOARD SETTINGS</div>
+            <div class="row">
+                <span>Token Max[1]:</span>
+                <div class="wan-spinner wan-spinner-1">
+                    <b class="minus">-</b>
+                    <input type="text" value="1">
+                    <b class="plus">+</b>
+                </div>
+            </div>
+            <div class="row">
+                <span>Token Max[2]:</span>
+                <div class="wan-spinner wan-spinner-1">
+                    <b class="minus">-</b>
+                    <input type="text" value="1">
+                    <b class="plus">+</b>
+                </div>
+            </div>
+            <div class="row">
+                <span>Charge Period:</span>
+                <div class="wan-spinner wan-spinner-1">
+                    <b class="minus">-</b>
+                    <input type="text" value="1">
+                    <b class="plus">+</b>
+                </div>
+            </div>
+            <div class="row">
+                <span>Await Interval:</span>
+                <div class="wan-spinner wan-spinner-1">
+                    <b class="minus">-</b>
+                    <input type="text" value="1">
+                    <b class="plus">+</b>
+                </div>
+            </div>
+            <div class="row">
+                <span>Manual Mode:</span>
+                <div class="check-btn">
+                    <input type="checkbox" class="toggle" id="toggle-8">
+                    <label for="toggle-8"></label>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"><div class="ref-all-btn">APPLY</div></div>
         </div>
     </div>
     <div class="main-bar">
