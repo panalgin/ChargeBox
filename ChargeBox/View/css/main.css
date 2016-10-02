@@ -738,6 +738,53 @@ input[type=range] {
     bottom: 0px;
 }
 
+.footer .tabarea {
+    background-color: #39393d;
+    position: absolute;
+    top: 24px;
+    left: 5px;
+    right: 5px;
+    bottom: 27px;
+}
+
+.footer span {
+    position: absolute;
+    background-color: #39393d;
+    top: 8px;
+    left: 5px;
+    text-align: center;
+    width: 50px;
+    height: 16px;
+    line-height: 16px;
+
+}
+
+    .footer #communication-area {
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        right: 5px;
+        left: 5px;
+       
+        -webkit-user-select: text;
+        -webkit-appearance: textfield;
+        
+        padding: 0px;
+        display: block;
+        background-color: #2a2a2c;
+        border-color: transparent;
+        border: 0;
+        padding: 3px;
+        color: #fff;
+        font-family: Tahoma;
+        font-size: 11px;
+        color: #777779;
+        overflow: auto;
+        overflow-y: auto;
+        outline: 1px solid #3f3f46;
+        cursor: text;
+    }
+
 .footer-line {
     position: absolute;
     width: 100%;

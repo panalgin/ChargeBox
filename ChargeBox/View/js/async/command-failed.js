@@ -5,3 +5,12 @@ if (value.length > 500)
     value = value.substring(0, 500);
 
 area.val("Failed: {0}\n" + value);
+
+
+var console = $("div#communication-area");
+value = console.html();
+
+if (value.length > 1000)
+    value = value.substring(0, 1000);
+
+console.html("[Command]: Failed, {0} <br />" + value);
