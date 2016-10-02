@@ -9,6 +9,7 @@ using System.Windows.Threading;
 using CefSharp;
 using System.IO;
 using ChargeBox.Commands;
+using Newtonsoft.Json;
 
 namespace ChargeBox
 {
@@ -97,6 +98,18 @@ namespace ChargeBox
         {
             if (World.ControlBoard != null)
                 World.ControlBoard.Disconnect();
+        }
+
+        public void ApplySettings(Dictionary<string, object> data)
+        {
+            byte m_TokenMax1 = Convert.ToByte(data["TokenMax1"]);
+            byte m_TokenMax2 = Convert.ToByte(data["TokenMax2"]);
+            byte m_ChargePeriod = Convert.ToByte(data["ChargePeriod"]);
+            byte m_AwaitInterval = Convert.ToByte(data["AwaitInterval"]);
+            bool m_Mode = Convert.ToBoolean(data["Mode"]); // false: auto; true: manual
+             
+            SettingsCommand m_Command = new SettingsCommand(m_TokenMax1, m_TokenMax2, m_ChargePeriod, m_AwaitInterval, m_Mode);
+            m_Command.Send();
         }
 
         #region EventHooks

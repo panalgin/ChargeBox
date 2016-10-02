@@ -13,4 +13,10 @@ $("span#awaitinterval-cb").text(object["AwaitInterval"]);
 $("span#chargeperiod-cb").text(object["ChargePeriod"]);
 $("span#factory-cb").text(object["Factory"]);
 
+$("input#TokenMax1-Box").val(object["TokenMax1"]);
+$("input#TokenMax2-Box").val(object["TokenMax2"]);
+$("input#ChargePeriod-Box").val(object["ChargePeriod"]);
+$("input#AwaitInterval-Box").val(object["AwaitInterval"]);
+$("input#Toggle-Mode").prop("checked", true);
+
 $("div#control-ajax").fadeOut(1000);

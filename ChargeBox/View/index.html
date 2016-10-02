@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="top">
-        <div class="title"><img src="img/chargebox-logo.png" title="Anasayfa" />ChargeBox - Version 0.0.3</div>
+        <div class="title"><img src="img/chargebox-logo.png" title="Anasayfa" />ChargeBox - Version 0.0.4</div>
         <ul class="menu">
             <li id="file-member" class="sys-menu-member">DOSYA</li>
             <li id="edit-member" class="sys-menu-member">DÜZENLE</li>
@@ -33,16 +33,10 @@
     <div class="spacer"></div>
     <script type="text/javascript">
         $(document).ready(function () {
-            var options = {
-                maxValue: 255,
-                minValue: 1,
-                inputWidth: 35,
-                start: 1,
-                valueChanged: function (val) {
-                    
-                }
-            }
-            $(".wan-spinner-1").WanSpinner(options);
+            $("div#spinner-1").WanSpinner({ inputWidth: 35, minValue: 1, maxValue: 255, start: 1 });
+            $("div#spinner-2").WanSpinner({ inputWidth: 35, minValue: 1, maxValue: 255, start: 1 });
+            $("div#spinner-3").WanSpinner({ inputWidth: 35, minValue: 1, maxValue: 255, start: 1 });
+            $("div#spinner-4").WanSpinner({ inputWidth: 35, minValue: 1, maxValue: 255, start: 1 });
 
             $("div.connection input[type='button']").on("click", function (e) {
                 windowsApp.disconnect();
@@ -97,45 +91,45 @@
             <div class="header">BOARD SETTINGS</div>
             <div class="row">
                 <span>Token Max[1]:</span>
-                <div class="wan-spinner wan-spinner-1">
+                <div class="wan-spinner" id="spinner-1">
                     <b class="minus">-</b>
-                    <input type="text" value="1">
+                    <input id="TokenMax1-Box" type="text" value="1">
                     <b class="plus">+</b>
                 </div>
             </div>
             <div class="row">
                 <span>Token Max[2]:</span>
-                <div class="wan-spinner wan-spinner-1">
+                <div class="wan-spinner" id="spinner-2">
                     <b class="minus">-</b>
-                    <input type="text" value="1">
+                    <input id="TokenMax2-Box" type="text" value="1">
                     <b class="plus">+</b>
                 </div>
             </div>
             <div class="row">
                 <span>Charge Period:</span>
-                <div class="wan-spinner wan-spinner-1">
+                <div class="wan-spinner" id="spinner-3">
                     <b class="minus">-</b>
-                    <input type="text" value="1">
+                    <input id="ChargePeriod-Box" type="text" value="1">
                     <b class="plus">+</b>
                 </div>
             </div>
             <div class="row">
                 <span>Await Interval:</span>
-                <div class="wan-spinner wan-spinner-1">
+                <div class="wan-spinner" id="spinner-4">
                     <b class="minus">-</b>
-                    <input type="text" value="1">
+                    <input id="AwaitInterval-Box" type="text" value="1">
                     <b class="plus">+</b>
                 </div>
             </div>
             <div class="row">
                 <span>Manual Mode:</span>
                 <div class="check-btn">
-                    <input type="checkbox" class="toggle" id="toggle-8">
-                    <label for="toggle-8"></label>
+                    <input type="checkbox" class="toggle" id="Toggle-Mode">
+                    <label for="Toggle-Mode"></label>
                 </div>
             </div>
             <div class="row"></div>
-            <div class="row"><div class="ref-all-btn">APPLY</div></div>
+            <div class="row"><div class="ref-all-btn" id="apply-settings-btn">APPLY</div></div>
         </div>
     </div>
     <div class="main-bar">
@@ -179,6 +173,17 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $("div#apply-settings-btn").click(function (e) {
+                var settings = {};
+                settings["TokenMax1"] = $("input#TokenMax1-Box").val();
+                settings["TokenMax2"] = $("input#TokenMax2-Box").val();
+                settings["ChargePeriod"] = $("input#ChargePeriod-Box").val();
+                settings["AwaitInterval"] = $("input#AwaitInterval-Box").val();
+                settings["Mode"] = $("input#Toggle-Mode").prop("checked");
+
+                windowsApp.applySettings(settings);
+            });
+
             $('div.minimize').click(function (e) {
                 windowsApp.minimizeWindowState();
             });
