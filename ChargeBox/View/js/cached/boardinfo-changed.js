@@ -12,11 +12,12 @@ $("span#tokentotal2-cb").text(object["TokenTotal2"]);
 $("span#awaitinterval-cb").text(object["AwaitInterval"]);
 $("span#chargeperiod-cb").text(object["ChargePeriod"]);
 $("span#factory-cb").text(object["Factory"]);
+$("span#mode-cb").text(object["Mode"] == true ? "Manual" : "Automatic");
 
 $("input#TokenMax1-Box").val(object["TokenMax1"]);
 $("input#TokenMax2-Box").val(object["TokenMax2"]);
 $("input#ChargePeriod-Box").val(object["ChargePeriod"]);
 $("input#AwaitInterval-Box").val(object["AwaitInterval"]);
-$("input#Toggle-Mode").prop("checked", true);
+$("input#Toggle-Mode").prop("checked", object["Mode"]);
 
 $("div#control-ajax").fadeOut(1000);

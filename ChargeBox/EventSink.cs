@@ -81,6 +81,8 @@ namespace ChargeBox
         public uint TokenTotal1 { get; set; }
         public uint TokenTotal2 { get; set; }
         public byte Factory { get; set; }
+        public bool Mode { get; set; }
+
 
         public string Json { get; set; }
 
@@ -98,6 +100,7 @@ namespace ChargeBox
                 this.TokenTotal1 = Convert.ToUInt32(m_Data["TokenTotal1"]);
                 this.TokenTotal2 = Convert.ToUInt32(m_Data["TokenTotal2"]);
                 this.Factory = Convert.ToByte(m_Data["Factory"]);
+                this.Mode = Convert.ToBoolean(m_Data["Mode"]);
 
                 this.Json = jsonVal;
             }
