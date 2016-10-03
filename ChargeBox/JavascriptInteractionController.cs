@@ -18,6 +18,12 @@ namespace ChargeBox
             EventSink.Connected += EventSink_Connected;
             EventSink.Disconnected += EventSink_Disconnected;
             EventSink.BoardInfoChanged += EventSink_BoardInfoChanged;
+            EventSink.TokenInserted += EventSink_TokenInserted;
+        }
+
+        private void EventSink_TokenInserted(TokenInsertedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.TokenInserted, args.Json);
         }
 
         private void EventSink_BoardInfoChanged(BoardInfoArgs args)

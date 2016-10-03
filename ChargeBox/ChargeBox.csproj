@@ -89,8 +89,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\SettingsCommand.cs" />
+    <Compile Include="Events\AwaitTimeoutArgs.cs" />
     <Compile Include="Events\BoardInfoArgs.cs" />
+    <Compile Include="Events\ChargeAuthorizedArgs.cs" />
+    <Compile Include="Events\ChargeFinishedArgs.cs" />
     <Compile Include="Events\CommandEventArgs.cs" />
+    <Compile Include="Events\DeviceConnectedArgs.cs" />
+    <Compile Include="Events\DeviceDisconnectedArgs.cs" />
     <Compile Include="Events\TokenInsertedArgs.cs" />
     <Compile Include="SerialConnection.cs">
       <SubType>Component</SubType>
@@ -149,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="View\css\wan-spinner.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\js\async\token-inserted.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\js\wan-spinner.js">

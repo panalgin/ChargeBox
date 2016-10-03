@@ -17,7 +17,10 @@ namespace ChargeBox
             CommandReceived,
             Connected,
             Disconnected,
-            BoardInfoChanged
+            BoardInfoChanged,
+            TokenInserted,
+            ChargeAuthorized,
+            AwaitTimeout
         }
 
         private static Dictionary<ScriptAction, ScriptInfo> ScriptEntities = new Dictionary<ScriptAction, ScriptInfo>() 
@@ -27,7 +30,8 @@ namespace ChargeBox
             { ScriptAction.CommandReceived, new ScriptInfo("View\\js\\async\\command-received.js", false) },
             { ScriptAction.Connected, new ScriptInfo("View\\js\\async\\connected.js", false) },
             { ScriptAction.Disconnected, new ScriptInfo("View\\js\\async\\disconnected.js", false) },
-            { ScriptAction.BoardInfoChanged, new ScriptInfo("View\\js\\cached\\boardinfo-changed.js", false) }
+            { ScriptAction.BoardInfoChanged, new ScriptInfo("View\\js\\cached\\boardinfo-changed.js", false) },
+            { ScriptAction.TokenInserted, new ScriptInfo("View\\js\\async\\token-inserted.js", false) }
         };
 
         public static void Run(ScriptAction action, params object[] parameters)

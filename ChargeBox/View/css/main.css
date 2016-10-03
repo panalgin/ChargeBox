@@ -738,7 +738,7 @@ input[type=range] {
     bottom: 0px;
 }
 
-    .footer .tabarea {
+    .footer .tab-area {
         background-color: #39393d;
         position: absolute;
         top: 24px;
@@ -747,7 +747,7 @@ input[type=range] {
         bottom: 27px;
     }
 
-    .footer span {
+    .footer .tab-head {
         position: absolute;
         background-color: #39393d;
         top: 8px;
