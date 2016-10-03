@@ -383,7 +383,7 @@ input[type=range] {
     }
 
     .menu-pop .row span {
-        color: #02c0ef;
+        color: #007acc;
         position: absolute;
         bottom: 7px;
         left: 5px;
@@ -738,26 +738,25 @@ input[type=range] {
     bottom: 0px;
 }
 
-.footer .tabarea {
-    background-color: #39393d;
-    position: absolute;
-    top: 24px;
-    left: 5px;
-    right: 5px;
-    bottom: 27px;
-}
+    .footer .tabarea {
+        background-color: #39393d;
+        position: absolute;
+        top: 24px;
+        left: 5px;
+        right: 5px;
+        bottom: 27px;
+    }
 
-.footer span {
-    position: absolute;
-    background-color: #39393d;
-    top: 8px;
-    left: 5px;
-    text-align: center;
-    width: 50px;
-    height: 16px;
-    line-height: 16px;
-
-}
+    .footer span {
+        position: absolute;
+        background-color: #39393d;
+        top: 8px;
+        left: 5px;
+        text-align: center;
+        width: 50px;
+        height: 16px;
+        line-height: 16px;
+    }
 
     .footer #communication-area {
         position: absolute;
@@ -765,10 +764,8 @@ input[type=range] {
         bottom: 5px;
         right: 5px;
         left: 5px;
-       
         -webkit-user-select: text;
         -webkit-appearance: textfield;
-        
         padding: 0px;
         display: block;
         background-color: #2a2a2c;
@@ -1035,9 +1032,9 @@ input[type=range] {
     overflow: hidden;
     float: left;
     margin-top: 20px;
-
     padding-bottom: 5px;
 }
+
 
 .charge-object {
     width: 140px;
@@ -1062,11 +1059,43 @@ input[type=range] {
         top: 25px;
     }
 
-    .charge-object:last-of-type {
+.cabinet-object {
+    width: 140px;
+    height: 87px;
+    display: block;
+    float: left;
+    background-color: #39393d;
+    margin: 5px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+    .cabinet-object img {
+        width: 61px;
+        height: 61px;
+        margin: 0px;
+        padding: 0px;
+        vertical-align: top;
+        position: absolute;
+        left: 5px;
+        top: 22px;
+    }
+
+    .cabinet-object .state {
+        position: absolute;
+        top: 30px;
+        left: 75px;
+        line-height: 15px;
+        height: 15px;
+        display: block;
+    }
+
+    .charge-object:last-of-type, .cabinet-object:last-of-type {
         margin-right: 5px;
     }
 
-    .charge-object .header {
+    .charge-object .header, .cabinet-object .header {
         position: absolute;
         top: 0px;
         width: 100%;
@@ -1080,22 +1109,22 @@ input[type=range] {
         z-index: 0;
     }
 
-    .charge-object .state, .charge-object .connection, .charge-object .period {
-        position: absolute;
-        top: 60px;
-        left: 57px;
-        line-height: 15px;
-        height: 15px;
-        display: block;
-    }
+.charge-object .state, .charge-object .connection, .charge-object .period {
+    position: absolute;
+    top: 60px;
+    left: 57px;
+    line-height: 15px;
+    height: 15px;
+    display: block;
+}
 
-    .charge-object .connection {
-        top: 75px;
-    }
+.charge-object .connection {
+    top: 75px;
+}
 
-    .charge-object .period {
-        top: 90px;
-    }
+.charge-object .period {
+    top: 90px;
+}
 
 @keyframes flickerAnimation { /* flame pulses */
     0% {
@@ -1119,7 +1148,6 @@ input[type=range] {
     left: 5px;
     bottom: 5px;
     animation: flickerAnimation 1s infinite;
-
     display: none;
 }
 
@@ -1135,6 +1163,7 @@ input[type=range] {
     top: 4px;
     margin-top: -14px;
 }
+
 input.toggle {
     max-height: 0;
     max-width: 0;
@@ -1203,6 +1232,5 @@ input.toggle {
     bottom: 5px;
     right: 5px;
     z-index: 999;
-
     display: none;
 }

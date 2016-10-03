@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using ChargeBox.Commands;
+using ChargeBox.Events;
 
 namespace ChargeBox
 {

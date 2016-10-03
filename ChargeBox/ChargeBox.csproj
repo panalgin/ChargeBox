@@ -89,6 +89,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\SettingsCommand.cs" />
+    <Compile Include="Events\BoardInfoArgs.cs" />
+    <Compile Include="Events\CommandEventArgs.cs" />
+    <Compile Include="Events\TokenInsertedArgs.cs" />
     <Compile Include="SerialConnection.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -105,7 +108,7 @@
     <Compile Include="Commands\CommandHandler.cs" />
     <Compile Include="Commands\HelloCommand.cs" />
     <Compile Include="ControlBoard.cs" />
-    <Compile Include="EventSink.cs" />
+    <Compile Include="Events\EventSink.cs" />
     <Compile Include="IControlBoard.cs" />
     <Compile Include="JavascriptInjector.cs" />
     <Compile Include="JavascriptInteractionController.cs" />

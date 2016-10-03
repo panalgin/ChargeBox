@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChargeBox.Events;
 
 namespace ChargeBox.Commands
 {
@@ -79,6 +80,13 @@ namespace ChargeBox.Commands
 
                                 BoardInfoArgs args = new BoardInfoArgs(m_Command);
                                 EventSink.InvokeBoardInfoChanged(args);
+                            }
+                            else if (m_Command.StartsWith("TokenInserted: "))
+                            {
+                                m_Command = m_Command.Replace("TokenInserted: ", "");
+
+                                TokenInsertedArgs args = new TokenInsertedArgs(m_Command);
+                                EventSink.InvokeTokenInserted(args);
                             }
                         }
                     }
