@@ -2,15 +2,18 @@
 
 namespace ChargeBox.Events
 {
-    public class DeviceDisconnectedArgs
+    public class ChargeStartedArgs
     {
         public byte PortID { get; set; }
+        public byte Period { get; set; }
+
         [JsonIgnore]
         public string Json { get; set; }
 
-        public DeviceDisconnectedArgs(string json)
+        public ChargeStartedArgs(string json)
         {
 
         }
+
     }
 }

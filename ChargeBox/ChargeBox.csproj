@@ -93,6 +93,7 @@
     <Compile Include="Events\BoardInfoArgs.cs" />
     <Compile Include="Events\ChargeAuthorizedArgs.cs" />
     <Compile Include="Events\ChargeFinishedArgs.cs" />
+    <Compile Include="Events\ChargeStartedArgs.cs" />
     <Compile Include="Events\CommandEventArgs.cs" />
     <Compile Include="Events\DeviceConnectedArgs.cs" />
     <Compile Include="Events\DeviceDisconnectedArgs.cs" />
