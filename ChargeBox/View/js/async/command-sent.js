@@ -6,10 +6,14 @@ if (value.length > 500)
 
 area.val("Sent: {0}\n" + value);
 
-var console = $("div#communication-area");
-value = console.html();
+var showOnConsole = false;
 
-if (value.length > 1000)
-    value = value.substring(0, 1000);
+if (showOnConsole) {{
+        var console = $("div#communication-area");
+        value = console.html();
 
-console.html("[Command]: Sent, {0} <br />" + value);
+        if (value.length > 1000)
+            value = value.substring(0, 1000);
+
+        console.html("[Command]: Sent, {0} <br />" + value);
+}}

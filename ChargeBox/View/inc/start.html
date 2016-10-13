@@ -1,43 +1,62 @@
 ﻿<div id="start-content" class="tab-content" tabindex="-1">
     <div class="layer">
         <span class="header">Cabinet Layer: 2</span>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                function toggleCabinetImage(item) {
+                    item.attr("src", "img/cabin-closed.png");
+                    item.next().text("Durum: ?");
+                }
+
+                $("div.cabinet-object").on("click", "img", function () {
+                    var id = $(this).parent().attr("id").replace("cab-", "");
+                    windowsApp.openDrawer(id);
+
+                    $(this).attr("src", "img/cabin-open.png");
+                    $(this).next().text("Durum: Açık");
+                    setTimeout(toggleCabinetImage, 1000, $(this));
+                });
+            });
+
+        </script>
         <div class="charge-layer">
-            <div class="cabinet-object">
+            <div id="cab-9" class="cabinet-object">
                 <span class="header">Cabinet: 9</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-10" class="cabinet-object">
                 <span class="header">Cabinet: 10</span>
-                <img src="img/cabin-open.png" />
+                <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-11" class="cabinet-object">
                 <span class="header">Cabinet: 11</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-12" class="cabinet-object">
                 <span class="header">Cabinet: 12</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-13" class="cabinet-object">
                 <span class="header">Cabinet: 13</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-14" class="cabinet-object">
                 <span class="header">Cabinet: 14</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-15" class="cabinet-object">
                 <span class="header">Cabinet: 15</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-16" class="cabinet-object">
                 <span class="header">Cabinet: 16</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
@@ -47,42 +66,42 @@
     <div class="layer">
         <span class="header">Cabinet Layer: 1</span>
         <div class="charge-layer">
-            <div class="cabinet-object">
+            <div id="cab-1" class="cabinet-object">
                 <span class="header">Cabinet: 1</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-2" class="cabinet-object">
                 <span class="header">Cabinet: 2</span>
-                <img src="img/cabin-open.png" />
+                <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-3" class="cabinet-object">
                 <span class="header">Cabinet: 3</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-4" class="cabinet-object">
                 <span class="header">Cabinet: 4</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-5" class="cabinet-object">
                 <span class="header">Cabinet: 5</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-6" class="cabinet-object">
                 <span class="header">Cabinet: 6</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-7" class="cabinet-object">
                 <span class="header">Cabinet: 7</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>
             </div>
-            <div class="cabinet-object">
+            <div id="cab-8" class="cabinet-object">
                 <span class="header">Cabinet: 8</span>
                 <img src="img/cabin-closed.png" />
                 <span class="state">Durum: ?</span>

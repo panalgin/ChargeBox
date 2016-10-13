@@ -25,6 +25,12 @@ namespace ChargeBox
             EventSink.AwaitTimeout += EventSink_AwaitTimeout;
             EventSink.DeviceConnected += EventSink_DeviceConnected;
             EventSink.DeviceDisconnected += EventSink_DeviceDisconnected;
+            EventSink.StatusChanged += EventSink_StatusChanged;
+        }
+
+        private void EventSink_StatusChanged(StatusChangedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.StatusChanged, args.Json);
         }
 
         private void EventSink_DeviceDisconnected(DeviceDisconnectedArgs args)
@@ -102,6 +108,12 @@ namespace ChargeBox
             {
                 Application.Current.MainWindow.WindowState = WindowState.Minimized;
             }));
+        }
+
+        public void OpenDrawer(string id)
+        {
+            OpenDrawerCommand m_Command = new OpenDrawerCommand(Convert.ToByte(id));
+            m_Command.Send();
         }
 
         public void Connect(string port, int baud)

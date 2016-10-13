@@ -88,7 +88,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\OpenDrawerCommand.cs" />
     <Compile Include="Commands\SettingsCommand.cs" />
+    <Compile Include="Events\StatusChangedArgs.cs" />
     <Compile Include="Events\AwaitTimeoutArgs.cs" />
     <Compile Include="Events\BoardInfoArgs.cs" />
     <Compile Include="Events\ChargeAuthorizedArgs.cs" />
@@ -158,6 +160,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\js\async\await-timeout.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\js\async\status-changed.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\js\async\device-disconnected.js">

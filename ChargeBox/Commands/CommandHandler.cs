@@ -124,6 +124,12 @@ namespace ChargeBox.Commands
                                 AwaitTimeoutArgs args = new AwaitTimeoutArgs(m_Command);
                                 EventSink.InvokeAwaitTimeout(args);
                             }
+                            else if (m_Command.StartsWith("StatusChanged: "))
+                            {
+                                m_Command = m_Command.Replace("StatusChanged: ", "");
+                                StatusChangedArgs args = new StatusChangedArgs(m_Command);
+                                EventSink.InvokeStatusChanged(args);
+                            }
                         }
                     }
                 }

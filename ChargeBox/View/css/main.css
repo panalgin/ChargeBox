@@ -1080,6 +1080,7 @@ input[type=range] {
         position: absolute;
         left: 5px;
         top: 22px;
+        cursor: pointer;
     }
 
     .cabinet-object .state {
