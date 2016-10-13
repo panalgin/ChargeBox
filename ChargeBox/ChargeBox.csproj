@@ -99,7 +99,9 @@
     <Compile Include="Events\CommandEventArgs.cs" />
     <Compile Include="Events\DeviceConnectedArgs.cs" />
     <Compile Include="Events\DeviceDisconnectedArgs.cs" />
+    <Compile Include="Events\TimeChangedArgs.cs" />
     <Compile Include="Events\TokenInsertedArgs.cs" />
+    <Compile Include="PortState.cs" />
     <Compile Include="SerialConnection.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -160,6 +162,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\js\async\await-timeout.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\js\async\time-changed.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="View\js\async\status-changed.js">

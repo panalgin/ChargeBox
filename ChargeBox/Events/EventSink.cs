@@ -25,6 +25,7 @@ namespace ChargeBox.Events
         public delegate void OnDeviceDisconnected(DeviceDisconnectedArgs args);
 
         public delegate void OnStatusChanged(StatusChangedArgs args);
+        public delegate void OnTimeChanged(TimeChangedArgs args);
 
 
         public static event OnCommandSent CommandSent;
@@ -44,6 +45,7 @@ namespace ChargeBox.Events
         public static event OnDeviceDisconnected DeviceDisconnected;
 
         public static event OnStatusChanged StatusChanged;
+        public static event OnTimeChanged TimeChanged;
         
 
         public static void InvokeCommandSent(CommandEventArgs args)
@@ -114,6 +116,11 @@ namespace ChargeBox.Events
         public static void InvokeStatusChanged(StatusChangedArgs args)
         {
             StatusChanged?.Invoke(args);
+        }
+
+        public static void InvokeTimeChanged(TimeChangedArgs args)
+        {
+            TimeChanged?.Invoke(args);
         }
     }
 }

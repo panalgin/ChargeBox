@@ -26,6 +26,12 @@ namespace ChargeBox
             EventSink.DeviceConnected += EventSink_DeviceConnected;
             EventSink.DeviceDisconnected += EventSink_DeviceDisconnected;
             EventSink.StatusChanged += EventSink_StatusChanged;
+            EventSink.TimeChanged += EventSink_TimeChanged;
+        }
+
+        private void EventSink_TimeChanged(TimeChangedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.TimeChanged, args.Json);
         }
 
         private void EventSink_StatusChanged(StatusChangedArgs args)

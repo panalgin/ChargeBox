@@ -25,7 +25,8 @@ namespace ChargeBox
             AwaitTimeout,
             DeviceConnected,
             DeviceDisconnected,
-            StatusChanged
+            StatusChanged,
+            TimeChanged,
         }
 
         private static Dictionary<ScriptAction, ScriptInfo> ScriptEntities = new Dictionary<ScriptAction, ScriptInfo>()
@@ -44,6 +45,7 @@ namespace ChargeBox
             { ScriptAction.DeviceConnected, new ScriptInfo("View\\js\\async\\device-connected.js", false) },
             { ScriptAction.DeviceDisconnected, new ScriptInfo("View\\js\\async\\device-disconnected.js", false) },
             { ScriptAction.StatusChanged, new ScriptInfo("View\\js\\async\\status-changed.js", false) },
+            { ScriptAction.TimeChanged, new ScriptInfo("View\\js\\async\\time-changed.js", false) }
         };
 
         public static void Run(ScriptAction action, params object[] parameters)

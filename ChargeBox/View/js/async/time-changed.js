@@ -19,21 +19,6 @@ for (var i = 0; i < 16; i++) {{
     
     var chObject = $("div#usb-" + (parseInt(item["PortID"]) + 1));
 
-    if (item["IsCharging"] == true) {{
-        chObject.children("span.state").text("Durum: Aktif");
-        chObject.children("div.charge-backlay").show();
-        chObject.children("div.check-btn").children("input.toggle").prop("checked", true);
-    }}
-    else {{
-        chObject.children("span.state").text("Durum: Kapalı");
-        chObject.children("div.charge-backlay").hide();
-        chObject.children("div.check-btn").children("input.toggle").prop("checked", false);
-    }}
-
-    
-    chObject.children("span.connection").text("Bağlantı: " + (item["IsConnected"] ? "Var" : "Yok"));
-
     var time_left = (item["RemainingChargingTime"]).toHHMMSS();
     chObject.children("span.period").text("Kalan: " + time_left);
-    
 }}

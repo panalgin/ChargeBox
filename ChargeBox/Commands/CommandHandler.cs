@@ -130,6 +130,12 @@ namespace ChargeBox.Commands
                                 StatusChangedArgs args = new StatusChangedArgs(m_Command);
                                 EventSink.InvokeStatusChanged(args);
                             }
+                            else if (m_Command.StartsWith("TimeChanged: "))
+                            {
+                                m_Command = m_Command.Replace("TimeChanged: ", "");
+                                TimeChangedArgs args = new TimeChangedArgs(m_Command);
+                                EventSink.InvokeTimeChanged(args);
+                            }
                         }
                     }
                 }

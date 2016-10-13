@@ -9,8 +9,10 @@ namespace ChargeBox
     public static class World
     {
         public static ControlBoard ControlBoard { get; set; }
+        public static List<PortState> PortStates { get; set; }
         public static void Initialize()
         {
+            PortStates = new List<PortState>();
         }
     }
 }
