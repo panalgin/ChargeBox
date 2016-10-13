@@ -19,6 +19,42 @@ namespace ChargeBox
             EventSink.Disconnected += EventSink_Disconnected;
             EventSink.BoardInfoChanged += EventSink_BoardInfoChanged;
             EventSink.TokenInserted += EventSink_TokenInserted;
+            EventSink.ChargeAuthorized += EventSink_ChargeAuthorized;
+            EventSink.ChargeStarted += EventSink_ChargeStarted;
+            EventSink.ChargeFinished += EventSink_ChargeFinished;
+            EventSink.AwaitTimeout += EventSink_AwaitTimeout;
+            EventSink.DeviceConnected += EventSink_DeviceConnected;
+            EventSink.DeviceDisconnected += EventSink_DeviceDisconnected;
+        }
+
+        private void EventSink_DeviceDisconnected(DeviceDisconnectedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.DeviceDisconnected, args.Json);
+        }
+
+        private void EventSink_DeviceConnected(DeviceConnectedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.DeviceConnected, args.Json);
+        }
+
+        private void EventSink_AwaitTimeout(AwaitTimeoutArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.AwaitTimeout, args.Json);
+        }
+
+        private void EventSink_ChargeFinished(ChargeFinishedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.ChargeFinished, args.Json);
+        }
+
+        private void EventSink_ChargeStarted(ChargeStartedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.ChargeStarted, args.Json);
+        }
+
+        private void EventSink_ChargeAuthorized(ChargeAuthorizedArgs args)
+        {
+            JavascriptInjector.Run(JavascriptInjector.ScriptAction.ChargeAuthorized, args.Json);
         }
 
         private void EventSink_TokenInserted(TokenInsertedArgs args)

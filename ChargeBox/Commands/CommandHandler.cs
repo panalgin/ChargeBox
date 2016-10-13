@@ -88,6 +88,24 @@ namespace ChargeBox.Commands
                                 TokenInsertedArgs args = new TokenInsertedArgs(m_Command);
                                 EventSink.InvokeTokenInserted(args);
                             }
+                            else if (m_Command.StartsWith("ChargeAuthorized: "))
+                            {
+                                m_Command = m_Command.Replace("ChargeAuthorized: ", "");
+                                ChargeAuthorizedArgs args = new ChargeAuthorizedArgs();
+                                EventSink.InvokeChargeAuthorized(args);
+                            }
+                            else if (m_Command.StartsWith("ChargeStarted: "))
+                            {
+                                m_Command = m_Command.Replace("ChargeStarted: ", "");
+                                ChargeStartedArgs args = new ChargeStartedArgs(m_Command);
+                                EventSink.InvokeChargeStarted(args);
+                            }
+                            else if (m_Command.StartsWith("ChargeFinished: "))
+                            {
+                                m_Command = m_Command.Replace("ChargeFinished: ", "");
+                                ChargeFinishedArgs args = new ChargeFinishedArgs(m_Command);
+                                EventSink.InvokeChargeFinished(args);
+                            }
                         }
                     }
                 }
