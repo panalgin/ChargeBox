@@ -27,7 +27,7 @@ namespace ChargeBox
             DeviceDisconnected
         }
 
-        private static Dictionary<ScriptAction, ScriptInfo> ScriptEntities = new Dictionary<ScriptAction, ScriptInfo>() 
+        private static Dictionary<ScriptAction, ScriptInfo> ScriptEntities = new Dictionary<ScriptAction, ScriptInfo>()
         {
             { ScriptAction.CommandSent, new ScriptInfo("View\\js\\async\\command-sent.js", false) },
             { ScriptAction.CommandFailed, new ScriptInfo("View\\js\\async\\command-failed.js", false) },
@@ -40,6 +40,8 @@ namespace ChargeBox
             { ScriptAction.ChargeStarted, new ScriptInfo("View\\js\\async\\charge-started.js", false) },
             { ScriptAction.ChargeFinished, new ScriptInfo("View\\js\\async\\charge-finished.js", false) },
             { ScriptAction.AwaitTimeout, new ScriptInfo("View\\js\\async\\await-timeout.js", false) },
+            { ScriptAction.DeviceConnected, new ScriptInfo("View\\js\\async\\device-connected.js", false) },
+            { ScriptAction.DeviceDisconnected, new ScriptInfo("View\\js\\async\\device-disconnected.js", false) },
         };
 
         public static void Run(ScriptAction action, params object[] parameters)

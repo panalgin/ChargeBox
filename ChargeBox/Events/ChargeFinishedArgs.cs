@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 
 namespace ChargeBox.Events
 {
@@ -11,7 +13,10 @@ namespace ChargeBox.Events
 
         public ChargeFinishedArgs(string json)
         {
+            var m_Data = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
 
+            this.PortID = Convert.ToByte(m_Data["PortID"]);
+            this.Json = JsonConvert.SerializeObject(this);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace ChargeBox.Events
         public AwaitTimeoutArgs(string cmd)
         {
             this.Surpassed = Convert.ToByte(cmd);
+
             this.Json = JsonConvert.SerializeObject(this);
         }
     }

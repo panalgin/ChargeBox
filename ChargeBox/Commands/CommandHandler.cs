@@ -88,6 +88,18 @@ namespace ChargeBox.Commands
                                 TokenInsertedArgs args = new TokenInsertedArgs(m_Command);
                                 EventSink.InvokeTokenInserted(args);
                             }
+                            else if (m_Command.StartsWith("DeviceConnected: "))
+                            {
+                                m_Command = m_Command.Replace("DeviceConnected: ", "");
+                                DeviceConnectedArgs args = new DeviceConnectedArgs(m_Command);
+                                EventSink.InvokeDeviceConnected(args);
+                            }
+                            else if (m_Command.StartsWith("DeviceDisconnected: "))
+                            {
+                                m_Command = m_Command.Replace("DeviceDisconnected: ", "");
+                                DeviceDisconnectedArgs args = new DeviceDisconnectedArgs(m_Command);
+                                EventSink.InvokeDeviceDisconnected(args);
+                            }
                             else if (m_Command.StartsWith("ChargeAuthorized: "))
                             {
                                 m_Command = m_Command.Replace("ChargeAuthorized: ", "");
@@ -105,6 +117,12 @@ namespace ChargeBox.Commands
                                 m_Command = m_Command.Replace("ChargeFinished: ", "");
                                 ChargeFinishedArgs args = new ChargeFinishedArgs(m_Command);
                                 EventSink.InvokeChargeFinished(args);
+                            }
+                            else if (m_Command.StartsWith("AwaitTimeout: "))
+                            {
+                                m_Command = m_Command.Replace("AwaitTimeout: ", "");
+                                AwaitTimeoutArgs args = new AwaitTimeoutArgs(m_Command);
+                                EventSink.InvokeAwaitTimeout(args);
                             }
                         }
                     }
