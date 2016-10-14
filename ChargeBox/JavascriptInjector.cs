@@ -44,7 +44,7 @@ namespace ChargeBox
             { ScriptAction.AwaitTimeout, new ScriptInfo("View\\js\\async\\await-timeout.js", false) },
             { ScriptAction.DeviceConnected, new ScriptInfo("View\\js\\async\\device-connected.js", false) },
             { ScriptAction.DeviceDisconnected, new ScriptInfo("View\\js\\async\\device-disconnected.js", false) },
-            { ScriptAction.StatusChanged, new ScriptInfo("View\\js\\async\\status-changed.js", false) },
+            { ScriptAction.StatusChanged, new ScriptInfo("View\\js\\async\\status-changed.js", true) },
             { ScriptAction.TimeChanged, new ScriptInfo("View\\js\\async\\time-changed.js", false) }
         };
 
