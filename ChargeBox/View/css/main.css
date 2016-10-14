@@ -213,7 +213,7 @@ img {
     width: 225px;
     background-color: #2d2d30;
     position: absolute;
-    bottom: 0px;
+    bottom: 129px;
     top: 65px;
 }
 
@@ -222,7 +222,7 @@ img {
     left: 225px;
     right: 225px;
     top: 69px;
-    bottom: 25px;
+    bottom: 129px;
     background-color: #2d2d30;
 }
 
@@ -231,7 +231,7 @@ img {
     background-color: #2d2d30;
     position: absolute;
     right: 0px;
-    bottom: 0px;
+    bottom: 129px;
     top: 65px;
 }
 
@@ -1234,4 +1234,28 @@ input.toggle {
     right: 5px;
     z-index: 999;
     display: none;
+}
+
+.device-ex {
+    position: relative;
+    display: block;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+.device-ex img { position: absolute; top: 5px; left: 0px; }
+.device-ex span { position: absolute; left: 133px; }
+.device-ex #state {
+    top: 20px;
+}
+
+.device-ex #ip {
+    top: 35px;
+}
+
+.device-ex #incoming {
+    top: 50px;
+}
+.device-ex #outgoing {
+    top: 65px;
 }

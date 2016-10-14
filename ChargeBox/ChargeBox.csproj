@@ -161,6 +161,9 @@
     <Content Include="View\css\wan-spinner.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\img\tablet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="View\js\async\await-timeout.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
